@@ -26,7 +26,8 @@
   --tce-f-head:"Head-Bold",Arial,sans-serif;--tce-f-bold:"NoBH-Bold",Arial,sans-serif;--tce-f-reg:"NoBH-Regular",Arial,sans-serif;
   box-sizing:border-box;max-width:750px;margin:0 auto;padding:20px;
   background:var(--tce-bg);color:var(--tce-ink);border-radius:6px;
-  font-family:var(--tce-f-reg);font-weight:400;font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+  font-family:var(--tce-f-reg);font-weight:400;font-size:16px;line-height:1.2em;-webkit-text-size-adjust:100%}
+#tce-carousel *{line-height:1.2em}
 #tce-carousel *,#tce-carousel *::before,#tce-carousel *::after{box-sizing:inherit}
 #tce-carousel strong{font-family:var(--tce-f-bold);font-weight:700}
 
@@ -34,13 +35,13 @@
 #tce-carousel .tce-frame-au{--tce-accent:var(--tce-au)}
 #tce-carousel .tce-frame-uk{--tce-accent:var(--tce-uk)}
 #tce-carousel .tce-frame-us{--tce-accent:var(--tce-us)}
-#tce-carousel .tce-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin:0 0 18px}
-#tce-carousel .tce-title{margin:0;font-family:var(--tce-f-head);font-weight:700;font-size:30px;line-height:1.1;text-wrap:balance}
-#tce-carousel .tce-sub{margin:6px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:15px;color:var(--tce-muted)}
-#tce-carousel .tce-count{flex:none;margin:6px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:14px;color:var(--tce-muted);font-variant-numeric:tabular-nums}
+#tce-carousel .tce-head{margin:0 0 18px}
+#tce-carousel .tce-title{margin:0;font-family:var(--tce-f-head);font-weight:700;font-size:30px;text-wrap:balance}
+#tce-carousel .tce-sub{margin:2px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:15px;color:var(--tce-muted)}
 
 #tce-carousel .tce-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;margin:0 -8px}
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;margin:0 -8px;
+  align-items:flex-start;overflow-y:hidden;transition:height .35s ease}
 #tce-carousel .tce-track::-webkit-scrollbar{display:none}
 #tce-carousel .tce-track:focus-visible{outline:2px solid var(--tce-ink);outline-offset:3px}
 #tce-carousel .tce-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;padding:6px 8px;overflow:hidden}
@@ -52,7 +53,7 @@
 #tce-carousel .tce-flag{flex:none;width:128px;height:auto;display:block;border-radius:6px;
   box-shadow:0 0 0 1px rgba(0,0,0,.08),0 6px 14px -6px rgba(0,0,0,.35);transform:rotate(-2deg)}
 #tce-carousel .tce-country{margin:0;font-family:var(--tce-f-bold);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--tce-accent)}
-#tce-carousel .tce-stat{margin:4px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:60px;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+#tce-carousel .tce-stat{margin:4px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:60px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 #tce-carousel .tce-stat-unit{font-size:.45em;letter-spacing:0;color:var(--tce-muted);margin-left:4px}
 #tce-carousel .tce-statlbl{margin:8px 0 0;font-size:15px;color:var(--tce-muted);max-width:34ch}
 
@@ -80,7 +81,7 @@
 #tce-carousel .tce-note{margin:12px 0 0;padding:10px 12px;border-left:3px solid var(--tce-accent);
   background:var(--tce-accent-soft);border-radius:0 6px 6px 0;font-size:15px}
 
-#tce-carousel .tce-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0 0}
+#tce-carousel .tce-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 0 0}
 #tce-carousel .tce-btn{appearance:none;border:1px solid var(--tce-line);background:var(--tce-panel);color:var(--tce-ink);width:44px;height:44px;
   border-radius:50%;display:grid;place-items:center;cursor:pointer;padding:0;transition:background .15s,opacity .15s}
 #tce-carousel .tce-btn:hover{background:var(--tce-track)}
@@ -116,7 +117,7 @@
   #tce-carousel .tce-dot-label{display:none}
 }
 @media (prefers-reduced-motion:reduce){
-  #tce-carousel .tce-track{scroll-behavior:auto}
+  #tce-carousel .tce-track{scroll-behavior:auto;transition:none}
   #tce-carousel .tce-seg,#tce-carousel .tce-dot-mark{transition:none}
 }
 </style>
@@ -127,7 +128,6 @@
     <h2 id="tce-title" class="tce-title">Employment Costs Beyond Wages</h2>
     <p id="tce-sub" class="tce-sub">What employers pay on top of every 100 in wages</p>
   </div>
-  <p id="tce-count" class="tce-count" aria-live="polite"><span id="tce-count-cur" class="tce-count-cur">1</span> / 3</p>
 </header>
 
 <div id="tce-track" class="tce-track" tabindex="0" aria-label="Slides – swipe or use arrow keys">
@@ -293,7 +293,6 @@
   var dots = root.querySelectorAll('.tce-dot');
   var prev = document.getElementById('tce-prev');
   var next = document.getElementById('tce-next');
-  var cur = document.getElementById('tce-count-cur');
   var frame = document.getElementById('tce-frame');
   var codes = ['au', 'uk', 'us'];
   var idx = -1;
@@ -308,9 +307,10 @@
     }
     prev.disabled = i === 0;
     next.disabled = i === slides.length - 1;
-    cur.textContent = i + 1;
+    fit();
     frame.className = 'tce-frame tce-frame-' + codes[i];
   }
+  function fit(){ if (idx >= 0) track.style.height = slides[idx].offsetHeight + 'px'; }
   function go(i){
     i = Math.max(0, Math.min(slides.length - 1, i));
     track.scrollTo({left: i * track.clientWidth});
@@ -331,7 +331,8 @@
     if (e.key === 'ArrowRight'){ e.preventDefault(); go(idx + 1); }
     if (e.key === 'ArrowLeft'){ e.preventDefault(); go(idx - 1); }
   });
-  window.addEventListener('resize', function(){ track.scrollLeft = idx * track.clientWidth; });
+  window.addEventListener('resize', function(){ track.scrollLeft = idx * track.clientWidth; fit(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 
   set(0);
   root.classList.add('is-ready');
