@@ -53,10 +53,9 @@
 #tce-carousel .tce-flagbox{flex:none;display:flex;flex-direction:column;gap:10px}
 #tce-carousel .tce-flag{flex:none;width:128px;height:auto;display:block;border-radius:6px;
   box-shadow:0 0 0 1px rgba(0,0,0,.08),0 6px 14px -6px rgba(0,0,0,.35);transform:rotate(-2deg)}
-#tce-carousel .tce-country{margin:0;white-space:nowrap;font-family:var(--tce-f-bold);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--tce-accent)}
+#tce-carousel .tce-country{margin:0;white-space:nowrap;font-family:var(--tce-f-bold);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--tce-accent);transform:rotate(-2deg);transform-origin:left center}
 #tce-carousel .tce-stat{margin:0;font-family:var(--tce-f-bold);font-weight:700;font-size:60px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 #tce-carousel .tce-stat-unit{font-size:.45em;letter-spacing:0;color:var(--tce-muted);margin-left:4px}
-#tce-carousel .tce-statlbl{margin:8px 0 0;font-size:15px;color:var(--tce-muted);max-width:34ch}
 
 #tce-carousel .tce-chart{margin:22px 0 0;padding:16px 16px 12px;border-radius:6px;background:var(--tce-panel)}
 #tce-carousel .tce-chart-title{margin:0 0 10px;font-family:var(--tce-f-bold);font-weight:700;font-size:14px;color:var(--tce-muted)}
@@ -77,8 +76,8 @@
 #tce-carousel .tce-key-cond{background:repeating-linear-gradient(135deg,var(--tce-accent) 0 2px,var(--tce-accent-soft) 2px 5px)}
 #tce-carousel .tce-key-more{background:linear-gradient(90deg,var(--tce-accent-soft),var(--tce-track))}
 
-#tce-carousel .tce-body{margin:20px 0 0}
-#tce-carousel .tce-text{margin:0;font-size:16px}
+#tce-carousel .tce-body{margin:8px 0 0}
+#tce-carousel .tce-text{margin:20px 0 0;font-size:16px}
 #tce-carousel .tce-note{margin:12px 0 0;padding:10px 12px;border-left:3px solid var(--tce-accent);
   background:var(--tce-accent-soft);border-radius:0 6px 6px 0;font-size:15px}
 
@@ -106,10 +105,9 @@
   #tce-carousel .tce-sub{font-size:3.4vw;font-size:min(15px,4.6cqi)}
   #tce-carousel .tce-top{gap:14px}
   #tce-carousel .tce-flag{width:84px}
-  #tce-carousel .tce-country{font-size:12px;letter-spacing:.05em}
+  #tce-carousel .tce-country{font-size:11px;letter-spacing:.05em}
   #tce-carousel .tce-flagbox{gap:8px}
   #tce-carousel .tce-stat{font-size:44px}
-  #tce-carousel .tce-statlbl{font-size:14px}
   #tce-carousel .tce-chart{margin-top:18px;padding:12px 10px 10px}
   #tce-carousel .tce-bar{height:38px}
   #tce-carousel .tce-seg{font-size:13px}
@@ -138,7 +136,6 @@
   <article id="tce-slide-au" class="tce-slide tce-slide-au is-active" role="group" aria-roledescription="slide" aria-label="1 of 3: Australia">
     <div id="tce-au-top" class="tce-top">
       <div id="tce-au-flagbox" class="tce-flagbox">
-        <p id="tce-au-country" class="tce-country">Australia</p>
         <svg id="tce-au-flag" class="tce-flag" viewBox="0 0 60 30" role="img" aria-label="Flag of Australia">
           <defs>
             <clipPath id="tce-au-clip-s"><path d="M0,0v15h30v-15z"/></clipPath>
@@ -160,12 +157,14 @@
             <polygon points="48.60,15.20 48.86,15.94 49.65,15.96 49.02,16.44 49.25,17.19 48.60,16.74 47.95,17.19 48.18,16.44 47.55,15.96 48.34,15.94"/>
           </g>
         </svg>
+        <p id="tce-au-country" class="tce-country">Australia</p>
       </div>
       <div id="tce-au-headline" class="tce-headline">
         <p id="tce-au-stat" class="tce-stat">+12<span id="tce-au-stat-unit" class="tce-stat-unit">%</span></p>
-        <p id="tce-au-statlbl" class="tce-statlbl">compulsory superannuation on eligible ordinary wages</p>
       </div>
     </div>
+
+    <p id="tce-au-text" class="tce-text">In Australia, compulsory superannuation currently adds <strong class="tce-em">12%</strong> to eligible ordinary wages.</p>
 
     <div id="tce-au-chart" class="tce-chart" aria-hidden="true">
       <p id="tce-au-chart-title" class="tce-chart-title">Cost to employer per A$100 of wages</p>
@@ -183,7 +182,6 @@
     </div>
 
     <div id="tce-au-body" class="tce-body">
-      <p id="tce-au-text" class="tce-text">In Australia, compulsory superannuation currently adds <strong class="tce-em">12%</strong> to eligible ordinary wages.</p>
       <p id="tce-au-note" class="tce-note">If you’re a medium+ coffee chain, you’ll also be paying <strong class="tce-em">payroll tax</strong> once you pass the relevant threshold – around <strong class="tce-em">A$1 million a year</strong> in total payroll.</p>
     </div>
   </article>
@@ -192,7 +190,6 @@
   <article id="tce-slide-uk" class="tce-slide tce-slide-uk" role="group" aria-roledescription="slide" aria-label="2 of 3: United Kingdom">
     <div id="tce-uk-top" class="tce-top">
       <div id="tce-uk-flagbox" class="tce-flagbox">
-        <p id="tce-uk-country" class="tce-country">United Kingdom</p>
         <svg id="tce-uk-flag" class="tce-flag" viewBox="0 0 60 30" role="img" aria-label="Flag of the United Kingdom">
           <defs>
             <clipPath id="tce-uk-clip-s"><path d="M0,0v30h60v-30z"/></clipPath>
@@ -206,12 +203,14 @@
             <path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/>
           </g>
         </svg>
+        <p id="tce-uk-country" class="tce-country">United Kingdom</p>
       </div>
       <div id="tce-uk-headline" class="tce-headline">
         <p id="tce-uk-stat" class="tce-stat">+15<span id="tce-uk-stat-unit" class="tce-stat-unit">%</span></p>
-        <p id="tce-uk-statlbl" class="tce-statlbl">employer National Insurance on wages above the employer threshold</p>
       </div>
     </div>
+
+    <p id="tce-uk-text" class="tce-text">In the UK, employers generally pay <strong class="tce-em">15% National Insurance</strong> on wages above the employer threshold.</p>
 
     <div id="tce-uk-chart" class="tce-chart" aria-hidden="true">
       <p id="tce-uk-chart-title" class="tce-chart-title">Cost to employer per £100 of wages above the threshold</p>
@@ -229,7 +228,6 @@
     </div>
 
     <div id="tce-uk-body" class="tce-body">
-      <p id="tce-uk-text" class="tce-text">In the UK, employers generally pay <strong class="tce-em">15% National Insurance</strong> on wages above the employer threshold.</p>
       <p id="tce-uk-note" class="tce-note">Eligible employees may also require a <strong class="tce-em">workplace pension</strong> contribution on top.</p>
     </div>
   </article>
@@ -238,19 +236,20 @@
   <article id="tce-slide-us" class="tce-slide tce-slide-us" role="group" aria-roledescription="slide" aria-label="3 of 3: United States">
     <div id="tce-us-top" class="tce-top">
       <div id="tce-us-flagbox" class="tce-flagbox">
-        <p id="tce-us-country" class="tce-country">United States</p>
         <svg id="tce-us-flag" class="tce-flag" viewBox="0 0 76 40" role="img" aria-label="Flag of the United States">
           <rect id="tce-us-flag-field" class="tce-flag-field" width="76" height="40" fill="#fff"/>
           <g id="tce-us-flag-stripes" class="tce-flag-stripes" fill="#B22234"><rect y="0.000" width="76" height="3.077"/><rect y="6.154" width="76" height="3.077"/><rect y="12.308" width="76" height="3.077"/><rect y="18.462" width="76" height="3.077"/><rect y="24.615" width="76" height="3.077"/><rect y="30.769" width="76" height="3.077"/><rect y="36.923" width="76" height="3.077"/></g>
           <rect id="tce-us-flag-canton" class="tce-flag-canton" width="30.4" height="21.54" fill="#3C3B6E"/>
           <g id="tce-us-flag-stars" class="tce-flag-stars" fill="#fff"><circle cx="2.53" cy="2.15" r=".75"/><circle cx="7.60" cy="2.15" r=".75"/><circle cx="12.67" cy="2.15" r=".75"/><circle cx="17.73" cy="2.15" r=".75"/><circle cx="22.80" cy="2.15" r=".75"/><circle cx="27.87" cy="2.15" r=".75"/><circle cx="5.07" cy="4.31" r=".75"/><circle cx="10.13" cy="4.31" r=".75"/><circle cx="15.20" cy="4.31" r=".75"/><circle cx="20.27" cy="4.31" r=".75"/><circle cx="25.33" cy="4.31" r=".75"/><circle cx="2.53" cy="6.46" r=".75"/><circle cx="7.60" cy="6.46" r=".75"/><circle cx="12.67" cy="6.46" r=".75"/><circle cx="17.73" cy="6.46" r=".75"/><circle cx="22.80" cy="6.46" r=".75"/><circle cx="27.87" cy="6.46" r=".75"/><circle cx="5.07" cy="8.62" r=".75"/><circle cx="10.13" cy="8.62" r=".75"/><circle cx="15.20" cy="8.62" r=".75"/><circle cx="20.27" cy="8.62" r=".75"/><circle cx="25.33" cy="8.62" r=".75"/><circle cx="2.53" cy="10.77" r=".75"/><circle cx="7.60" cy="10.77" r=".75"/><circle cx="12.67" cy="10.77" r=".75"/><circle cx="17.73" cy="10.77" r=".75"/><circle cx="22.80" cy="10.77" r=".75"/><circle cx="27.87" cy="10.77" r=".75"/><circle cx="5.07" cy="12.92" r=".75"/><circle cx="10.13" cy="12.92" r=".75"/><circle cx="15.20" cy="12.92" r=".75"/><circle cx="20.27" cy="12.92" r=".75"/><circle cx="25.33" cy="12.92" r=".75"/><circle cx="2.53" cy="15.08" r=".75"/><circle cx="7.60" cy="15.08" r=".75"/><circle cx="12.67" cy="15.08" r=".75"/><circle cx="17.73" cy="15.08" r=".75"/><circle cx="22.80" cy="15.08" r=".75"/><circle cx="27.87" cy="15.08" r=".75"/><circle cx="5.07" cy="17.23" r=".75"/><circle cx="10.13" cy="17.23" r=".75"/><circle cx="15.20" cy="17.23" r=".75"/><circle cx="20.27" cy="17.23" r=".75"/><circle cx="25.33" cy="17.23" r=".75"/><circle cx="2.53" cy="19.39" r=".75"/><circle cx="7.60" cy="19.39" r=".75"/><circle cx="12.67" cy="19.39" r=".75"/><circle cx="17.73" cy="19.39" r=".75"/><circle cx="22.80" cy="19.39" r=".75"/><circle cx="27.87" cy="19.39" r=".75"/></g>
         </svg>
+        <p id="tce-us-country" class="tce-country">United States</p>
       </div>
       <div id="tce-us-headline" class="tce-headline">
         <p id="tce-us-stat" class="tce-stat">+7.65<span id="tce-us-stat-unit" class="tce-stat-unit">%</span></p>
-        <p id="tce-us-statlbl" class="tce-statlbl">Social Security and Medicare – and that’s just the start</p>
       </div>
     </div>
+
+    <p id="tce-us-text" class="tce-text">In the US, employers should allow at least another <strong class="tce-em">7.65%</strong> on top of wages for Social Security and Medicare, plus <strong class="tce-em">unemployment taxes</strong> and <strong class="tce-em">workers’ compensation insurance</strong>.</p>
 
     <div id="tce-us-chart" class="tce-chart" aria-hidden="true">
       <p id="tce-us-chart-title" class="tce-chart-title">Cost to employer per US$100 of wages</p>
@@ -269,7 +268,6 @@
     </div>
 
     <div id="tce-us-body" class="tce-body">
-      <p id="tce-us-text" class="tce-text">In the US, employers should allow at least another <strong class="tce-em">7.65%</strong> on top of wages for Social Security and Medicare, plus <strong class="tce-em">unemployment taxes</strong> and <strong class="tce-em">workers’ compensation insurance</strong>.</p>
       <p id="tce-us-note" class="tce-note"><strong class="tce-em">Health insurance, retirement contributions and other benefits</strong> can increase the true labour cost considerably further.</p>
     </div>
   </article>
