@@ -24,14 +24,14 @@
   --tce-wage:#cfcfcf;--tce-dot:#bdbdbd;
   --tce-au:#0f7a55;--tce-au-soft:#dcefe6;--tce-uk:#c8102e;--tce-uk-soft:#f8e0e4;--tce-us:#1f4fbf;--tce-us-soft:#e0e7f8;
   --tce-f-head:"Head-Bold",Arial,sans-serif;--tce-f-bold:"NoBH-Bold",Arial,sans-serif;--tce-f-reg:"NoBH-Regular",Arial,sans-serif;
-  box-sizing:border-box;max-width:750px;margin:0 auto;padding:20px;
-  background:var(--tce-bg);color:var(--tce-ink);border-radius:6px;
+  box-sizing:border-box;max-width:750px;margin:0 auto;padding:0;
+  background:transparent;color:var(--tce-ink);
   font-family:var(--tce-f-reg);font-weight:400;font-size:16px;line-height:1.2em;-webkit-text-size-adjust:100%}
 #tce-carousel *{line-height:1.2em}
 #tce-carousel *,#tce-carousel *::before,#tce-carousel *::after{box-sizing:inherit}
 #tce-carousel strong{font-family:var(--tce-f-bold);font-weight:700}
 
-#tce-carousel .tce-frame{container-type:inline-size;background:var(--tce-panel);border-radius:6px;border-top:5px solid var(--tce-accent);padding:24px 26px 20px;transition:border-color .3s}
+#tce-carousel .tce-frame{container-type:inline-size;width:100%;background:var(--tce-bg);border-radius:6px;border-top:5px solid var(--tce-accent);padding:24px 26px 20px;transition:border-color .3s}
 #tce-carousel .tce-frame-au{--tce-accent:var(--tce-au)}
 #tce-carousel .tce-frame-uk{--tce-accent:var(--tce-uk)}
 #tce-carousel .tce-frame-us{--tce-accent:var(--tce-us)}
@@ -58,7 +58,7 @@
 #tce-carousel .tce-stat-unit{font-size:.45em;letter-spacing:0;color:var(--tce-muted);margin-left:4px}
 #tce-carousel .tce-statlbl{margin:8px 0 0;font-size:15px;color:var(--tce-muted);max-width:34ch}
 
-#tce-carousel .tce-chart{margin:22px 0 0;padding:16px 16px 12px;border-radius:6px;background:var(--tce-bg)}
+#tce-carousel .tce-chart{margin:22px 0 0;padding:16px 16px 12px;border-radius:6px;background:var(--tce-panel)}
 #tce-carousel .tce-chart-title{margin:0 0 10px;font-family:var(--tce-f-bold);font-weight:700;font-size:14px;color:var(--tce-muted)}
 #tce-carousel .tce-bar{display:flex;height:44px;border-radius:6px;overflow:hidden;background:var(--tce-track)}
 #tce-carousel .tce-seg{height:100%;display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;
@@ -94,14 +94,13 @@
   padding:0 12px;border-radius:18px;background:transparent;color:var(--tce-muted);
   font-family:var(--tce-f-bold);font-weight:700;font-size:14px}
 #tce-carousel .tce-dot-mark{width:8px;height:8px;border-radius:50%;background:var(--tce-dot);transition:width .25s,background .25s}
-#tce-carousel .tce-dot[aria-current="true"]{background:var(--tce-bg);color:var(--tce-ink);box-shadow:0 0 0 1px var(--tce-line)}
+#tce-carousel .tce-dot[aria-current="true"]{background:var(--tce-panel);color:var(--tce-ink);box-shadow:0 0 0 1px var(--tce-line)}
 #tce-carousel .tce-dot[aria-current="true"] .tce-dot-mark{width:20px;border-radius:4px;background:var(--tce-ink)}
 
 /* bar grows in when a slide becomes active */
 #tce-carousel.is-ready .tce-slide:not(.is-active) .tce-seg-anim{flex-basis:0!important}
 
 @media (max-width:560px){
-  #tce-carousel{padding:10px}
   #tce-carousel .tce-frame{padding:18px 14px 14px}
   #tce-carousel .tce-title{font-size:5.4vw;font-size:min(30px,6.2cqi)}
   #tce-carousel .tce-sub{font-size:3.4vw;font-size:min(15px,4.6cqi)}
