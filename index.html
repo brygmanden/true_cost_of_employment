@@ -53,7 +53,8 @@
 #tce-carousel .tce-flagbox{flex:none;display:flex;flex-direction:column;gap:10px}
 #tce-carousel .tce-flag{flex:none;width:128px;height:auto;display:block;border-radius:6px;
   box-shadow:0 0 0 1px rgba(0,0,0,.08),0 6px 14px -6px rgba(0,0,0,.35);transform:rotate(-2deg)}
-#tce-carousel .tce-stat{margin:0;font-family:var(--tce-f-head);font-weight:700;font-size:60px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+#tce-carousel .tce-stat{margin:0;font-family:var(--tce-f-bold);font-weight:700;font-size:60px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;transform:rotate(2deg);transform-origin:left center}
+#tce-carousel .tce-stat-plus{display:inline-block;font-size:.6em;margin-right:2px;vertical-align:baseline;transform:translateY(.13em)}
 #tce-carousel .tce-stat-unit{font-size:.45em;letter-spacing:0;color:var(--tce-muted);margin-left:4px}
 
 #tce-carousel .tce-chart{margin:22px 0 0;padding:16px 16px 12px;border-radius:6px;background:var(--tce-panel)}
@@ -157,7 +158,7 @@
         </svg>
       </div>
       <div id="tce-au-headline" class="tce-headline">
-        <p id="tce-au-stat" class="tce-stat">+12<span id="tce-au-stat-unit" class="tce-stat-unit">%</span></p>
+        <p id="tce-au-stat" class="tce-stat"><span id="tce-au-stat-plus" class="tce-stat-plus">+</span>12<span id="tce-au-stat-unit" class="tce-stat-unit">%</span></p>
       </div>
     </div>
 
@@ -202,7 +203,7 @@
         </svg>
       </div>
       <div id="tce-uk-headline" class="tce-headline">
-        <p id="tce-uk-stat" class="tce-stat">+15<span id="tce-uk-stat-unit" class="tce-stat-unit">%</span></p>
+        <p id="tce-uk-stat" class="tce-stat"><span id="tce-uk-stat-plus" class="tce-stat-plus">+</span>15<span id="tce-uk-stat-unit" class="tce-stat-unit">%</span></p>
       </div>
     </div>
 
@@ -240,7 +241,7 @@
         </svg>
       </div>
       <div id="tce-us-headline" class="tce-headline">
-        <p id="tce-us-stat" class="tce-stat">+7.65<span id="tce-us-stat-unit" class="tce-stat-unit">%</span></p>
+        <p id="tce-us-stat" class="tce-stat"><span id="tce-us-stat-plus" class="tce-stat-plus">+</span>7.65<span id="tce-us-stat-unit" class="tce-stat-unit">%</span></p>
       </div>
     </div>
 
