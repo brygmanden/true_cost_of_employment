@@ -361,7 +361,7 @@
   let lastHeight = 0;
   const THRESHOLD = 2; // Ignore size variations smaller than 2px
 
-  function sendHeight() {
+  function sendHeight(force) {
     // Measure body offsetHeight or root scrollHeight
     const body = document.body;
 
@@ -374,7 +374,7 @@
     currentHeight = currentHeight;
 
     // Only update if the height difference exceeds our threshold
-    if (Math.abs(currentHeight - lastHeight) >= THRESHOLD) {
+    if (force === true || Math.abs(currentHeight - lastHeight) >= THRESHOLD) {
       lastHeight = currentHeight;
       window.parent.postMessage(
         {
@@ -411,8 +411,27 @@
     });
   }
 
-  // 2. Ensure initial height measurement after images/fonts finish loading
-  window.addEventListener("load", sendHeight);
+  // 2. Always send the height on load, even if it hasn't changed, so the
+  //    parent gets it once its listener is ready. Repeat after the web fonts
+  //    have loaded and once more shortly after, in case layout settles late.
+  function sendOnLoad() {
+    sendHeight(true);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => sendHeight(true));
+    }
+    setTimeout(() => sendHeight(true), 500);
+  }
+
+  if (document.readyState === "complete") {
+    sendOnLoad();
+  } else {
+    window.addEventListener("load", sendOnLoad);
+  }
+
+  // 3. Also send when the page is restored from the back/forward cache.
+  window.addEventListener("pageshow", (e) => {
+    if (e.persisted) sendHeight(true);
+  });
 })();
 </script>
 
