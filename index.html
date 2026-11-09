@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>True Cost of Employment</title>
+<title>Employment Costs Beyond Wages</title>
 </head>
 <body id="tce-page" class="tce-page">
 
@@ -13,7 +13,7 @@
      Every style is scoped to #tce-carousel.
      ============================================================ -->
 <!-- START -->
-<section id="tce-carousel" class="tce" aria-roledescription="carousel" aria-label="The true cost of employment">
+<section id="tce-carousel" class="tce" aria-roledescription="carousel" aria-label="Employment Costs Beyond Wages">
 <style id="tce-styles">
 @font-face{font-family:"Head-Bold";src:url("https://www.baristahustle.com/wp-content/themes/divi-child/assets/fonts/head/Head-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"NoBH-Bold";src:url("https://www.baristahustle.com/wp-content/themes/divi-child/assets/fonts/nobh/NoBH-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
@@ -24,24 +24,26 @@
   --tce-wage:#cfcfcf;--tce-dot:#bdbdbd;
   --tce-au:#0f7a55;--tce-au-soft:#dcefe6;--tce-uk:#c8102e;--tce-uk-soft:#f8e0e4;--tce-us:#1f4fbf;--tce-us-soft:#e0e7f8;
   --tce-f-head:"Head-Bold",Arial,sans-serif;--tce-f-bold:"NoBH-Bold",Arial,sans-serif;--tce-f-reg:"NoBH-Regular",Arial,sans-serif;
-  box-sizing:border-box;max-width:750px;margin:0 auto;padding:28px 32px 20px;
+  box-sizing:border-box;max-width:750px;margin:0 auto;padding:20px;
   background:var(--tce-bg);color:var(--tce-ink);border-radius:6px;
   font-family:var(--tce-f-reg);font-weight:400;font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
 #tce-carousel *,#tce-carousel *::before,#tce-carousel *::after{box-sizing:inherit}
 #tce-carousel strong{font-family:var(--tce-f-bold);font-weight:700}
 
+#tce-carousel .tce-frame{background:var(--tce-panel);border-radius:6px;border-top:5px solid var(--tce-accent);padding:24px 26px 20px;transition:border-color .3s}
+#tce-carousel .tce-frame-au{--tce-accent:var(--tce-au)}
+#tce-carousel .tce-frame-uk{--tce-accent:var(--tce-uk)}
+#tce-carousel .tce-frame-us{--tce-accent:var(--tce-us)}
 #tce-carousel .tce-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin:0 0 18px}
 #tce-carousel .tce-title{margin:0;font-family:var(--tce-f-head);font-weight:700;font-size:30px;line-height:1.1;text-wrap:balance}
 #tce-carousel .tce-sub{margin:6px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:15px;color:var(--tce-muted)}
 #tce-carousel .tce-count{flex:none;margin:6px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:14px;color:var(--tce-muted);font-variant-numeric:tabular-nums}
 
 #tce-carousel .tce-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
-  scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;border-radius:6px}
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;margin:0 -8px}
 #tce-carousel .tce-track::-webkit-scrollbar{display:none}
 #tce-carousel .tce-track:focus-visible{outline:2px solid var(--tce-ink);outline-offset:3px}
-#tce-carousel .tce-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;
-  padding:24px 26px 24px;background:var(--tce-panel);border-radius:6px;border-top:5px solid var(--tce-accent)}
-#tce-carousel .tce-slide + .tce-slide{margin-left:0}
+#tce-carousel .tce-slide{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always;padding:6px 8px;overflow:hidden}
 #tce-carousel .tce-slide-au{--tce-accent:var(--tce-au);--tce-accent-soft:var(--tce-au-soft)}
 #tce-carousel .tce-slide-uk{--tce-accent:var(--tce-uk);--tce-accent-soft:var(--tce-uk-soft)}
 #tce-carousel .tce-slide-us{--tce-accent:var(--tce-us);--tce-accent-soft:var(--tce-us-soft)}
@@ -78,7 +80,7 @@
 #tce-carousel .tce-note{margin:12px 0 0;padding:10px 12px;border-left:3px solid var(--tce-accent);
   background:var(--tce-accent-soft);border-radius:0 6px 6px 0;font-size:15px}
 
-#tce-carousel .tce-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 0}
+#tce-carousel .tce-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--tce-line)}
 #tce-carousel .tce-btn{appearance:none;border:1px solid var(--tce-line);background:var(--tce-panel);color:var(--tce-ink);width:44px;height:44px;
   border-radius:50%;display:grid;place-items:center;cursor:pointer;padding:0;transition:background .15s,opacity .15s}
 #tce-carousel .tce-btn:hover{background:var(--tce-track)}
@@ -90,18 +92,17 @@
   padding:0 12px;border-radius:18px;background:transparent;color:var(--tce-muted);
   font-family:var(--tce-f-bold);font-weight:700;font-size:14px}
 #tce-carousel .tce-dot-mark{width:8px;height:8px;border-radius:50%;background:var(--tce-dot);transition:width .25s,background .25s}
-#tce-carousel .tce-dot[aria-current="true"]{background:var(--tce-panel);color:var(--tce-ink);box-shadow:0 0 0 1px var(--tce-line)}
+#tce-carousel .tce-dot[aria-current="true"]{background:var(--tce-bg);color:var(--tce-ink);box-shadow:0 0 0 1px var(--tce-line)}
 #tce-carousel .tce-dot[aria-current="true"] .tce-dot-mark{width:20px;border-radius:4px;background:var(--tce-ink)}
-#tce-carousel .tce-src{margin:14px 0 0;padding:12px 0 0;border-top:1px solid var(--tce-line);font-size:13px;color:var(--tce-muted)}
 
 /* bar grows in when a slide becomes active */
 #tce-carousel.is-ready .tce-slide:not(.is-active) .tce-seg-anim{flex-basis:0!important}
 
 @media (max-width:560px){
-  #tce-carousel{padding:20px 14px 14px}
+  #tce-carousel{padding:10px}
+  #tce-carousel .tce-frame{padding:18px 14px 14px}
   #tce-carousel .tce-title{font-size:24px}
   #tce-carousel .tce-sub{font-size:14px}
-  #tce-carousel .tce-slide{padding:20px 16px}
   #tce-carousel .tce-top{gap:14px}
   #tce-carousel .tce-flag{width:84px}
   #tce-carousel .tce-stat{font-size:44px}
@@ -120,9 +121,10 @@
 }
 </style>
 
+<div id="tce-frame" class="tce-frame tce-frame-au">
 <header id="tce-head" class="tce-head">
   <div id="tce-head-text" class="tce-head-text">
-    <h2 id="tce-title" class="tce-title">The true cost of employment</h2>
+    <h2 id="tce-title" class="tce-title">Employment Costs Beyond Wages</h2>
     <p id="tce-sub" class="tce-sub">What employers pay on top of every 100 in wages</p>
   </div>
   <p id="tce-count" class="tce-count" aria-live="polite"><span id="tce-count-cur" class="tce-count-cur">1</span> / 3</p>
@@ -279,7 +281,7 @@
     <svg id="tce-next-icon" class="tce-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
   </button>
 </nav>
-<p id="tce-src" class="tce-src">Bars are illustrative. Hatched and faded sections vary by business size, location and eligibility.</p>
+</div>
 
 <script id="tce-script">
 (function(){
@@ -292,6 +294,8 @@
   var prev = document.getElementById('tce-prev');
   var next = document.getElementById('tce-next');
   var cur = document.getElementById('tce-count-cur');
+  var frame = document.getElementById('tce-frame');
+  var codes = ['au', 'uk', 'us'];
   var idx = -1;
 
   function set(i){
@@ -305,6 +309,7 @@
     prev.disabled = i === 0;
     next.disabled = i === slides.length - 1;
     cur.textContent = i + 1;
+    frame.className = 'tce-frame tce-frame-' + codes[i];
   }
   function go(i){
     i = Math.max(0, Math.min(slides.length - 1, i));
