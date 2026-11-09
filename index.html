@@ -31,12 +31,12 @@
 #tce-carousel *,#tce-carousel *::before,#tce-carousel *::after{box-sizing:inherit}
 #tce-carousel strong{font-family:var(--tce-f-bold);font-weight:700}
 
-#tce-carousel .tce-frame{background:var(--tce-panel);border-radius:6px;border-top:5px solid var(--tce-accent);padding:24px 26px 20px;transition:border-color .3s}
+#tce-carousel .tce-frame{container-type:inline-size;background:var(--tce-panel);border-radius:6px;border-top:5px solid var(--tce-accent);padding:24px 26px 20px;transition:border-color .3s}
 #tce-carousel .tce-frame-au{--tce-accent:var(--tce-au)}
 #tce-carousel .tce-frame-uk{--tce-accent:var(--tce-uk)}
 #tce-carousel .tce-frame-us{--tce-accent:var(--tce-us)}
 #tce-carousel .tce-head{margin:0 0 18px}
-#tce-carousel .tce-title{margin:0;font-family:var(--tce-f-head);font-weight:700;font-size:30px;text-wrap:balance}
+#tce-carousel .tce-title{margin:0;font-family:var(--tce-f-head);font-weight:700;font-size:30px;font-size:min(30px,6.2cqi);white-space:nowrap}
 #tce-carousel .tce-sub{margin:2px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:15px;color:var(--tce-muted)}
 
 #tce-carousel .tce-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
@@ -50,10 +50,11 @@
 #tce-carousel .tce-slide-us{--tce-accent:var(--tce-us);--tce-accent-soft:var(--tce-us-soft)}
 
 #tce-carousel .tce-top{display:flex;align-items:center;gap:22px}
+#tce-carousel .tce-flagbox{flex:none;display:flex;flex-direction:column;gap:10px}
 #tce-carousel .tce-flag{flex:none;width:128px;height:auto;display:block;border-radius:6px;
   box-shadow:0 0 0 1px rgba(0,0,0,.08),0 6px 14px -6px rgba(0,0,0,.35);transform:rotate(-2deg)}
-#tce-carousel .tce-country{margin:0;font-family:var(--tce-f-bold);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--tce-accent)}
-#tce-carousel .tce-stat{margin:4px 0 0;font-family:var(--tce-f-bold);font-weight:700;font-size:60px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+#tce-carousel .tce-country{margin:0;white-space:nowrap;font-family:var(--tce-f-bold);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--tce-accent)}
+#tce-carousel .tce-stat{margin:0;font-family:var(--tce-f-bold);font-weight:700;font-size:60px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 #tce-carousel .tce-stat-unit{font-size:.45em;letter-spacing:0;color:var(--tce-muted);margin-left:4px}
 #tce-carousel .tce-statlbl{margin:8px 0 0;font-size:15px;color:var(--tce-muted);max-width:34ch}
 
@@ -102,10 +103,12 @@
 @media (max-width:560px){
   #tce-carousel{padding:10px}
   #tce-carousel .tce-frame{padding:18px 14px 14px}
-  #tce-carousel .tce-title{font-size:24px}
+  #tce-carousel .tce-title{font-size:5.4vw;font-size:min(30px,6.2cqi)}
   #tce-carousel .tce-sub{font-size:14px}
   #tce-carousel .tce-top{gap:14px}
   #tce-carousel .tce-flag{width:84px}
+  #tce-carousel .tce-country{font-size:12px;letter-spacing:.05em}
+  #tce-carousel .tce-flagbox{gap:8px}
   #tce-carousel .tce-stat{font-size:44px}
   #tce-carousel .tce-statlbl{font-size:14px}
   #tce-carousel .tce-chart{margin-top:18px;padding:12px 10px 10px}
@@ -135,29 +138,31 @@
   <!-- ===== 1. AUSTRALIA ===== -->
   <article id="tce-slide-au" class="tce-slide tce-slide-au is-active" role="group" aria-roledescription="slide" aria-label="1 of 3: Australia">
     <div id="tce-au-top" class="tce-top">
-      <svg id="tce-au-flag" class="tce-flag" viewBox="0 0 60 30" role="img" aria-label="Flag of Australia">
-        <defs>
-          <clipPath id="tce-au-clip-s"><path d="M0,0v15h30v-15z"/></clipPath>
-          <clipPath id="tce-au-clip-t"><path d="M15,7.5h15v7.5zv7.5h-15zh-15v-7.5zv-7.5h15z"/></clipPath>
-        </defs>
-        <rect id="tce-au-flag-field" class="tce-flag-field" width="60" height="30" fill="#012169"/>
-        <g id="tce-au-flag-union" class="tce-flag-union" clip-path="url(#tce-au-clip-s)">
-          <path d="M0,0L30,15M30,0L0,15" stroke="#fff" stroke-width="3"/>
-          <path d="M0,0L30,15M30,0L0,15" clip-path="url(#tce-au-clip-t)" stroke="#C8102E" stroke-width="2"/>
-          <path d="M15,0v15M0,7.5h30" stroke="#fff" stroke-width="5"/>
-          <path d="M15,0v15M0,7.5h30" stroke="#C8102E" stroke-width="3"/>
-        </g>
-        <g id="tce-au-flag-stars" class="tce-flag-stars" fill="#fff">
-          <polygon points="15.00,18.30 15.80,20.84 18.28,19.88 16.80,22.09 19.09,23.43 16.44,23.65 16.82,26.28 15.00,24.35 13.18,26.28 13.56,23.65 10.91,23.43 13.20,22.09 11.72,19.88 14.20,20.84"/>
-          <polygon points="45.00,3.60 45.36,4.75 46.49,4.32 45.82,5.31 46.85,5.92 45.65,6.02 45.82,7.21 45.00,6.34 44.18,7.21 44.35,6.02 43.15,5.92 44.18,5.31 43.51,4.32 44.64,4.75"/>
-          <polygon points="37.50,11.30 37.86,12.45 38.99,12.02 38.32,13.01 39.35,13.62 38.15,13.72 38.32,14.91 37.50,14.04 36.68,14.91 36.85,13.72 35.65,13.62 36.68,13.01 36.01,12.02 37.14,12.45"/>
-          <polygon points="51.60,9.50 51.96,10.65 53.09,10.22 52.42,11.21 53.45,11.82 52.25,11.92 52.42,13.11 51.60,12.24 50.78,13.11 50.95,11.92 49.75,11.82 50.78,11.21 50.11,10.22 51.24,10.65"/>
-          <polygon points="45.00,22.70 45.36,23.85 46.49,23.42 45.82,24.41 46.85,25.02 45.65,25.12 45.82,26.31 45.00,25.44 44.18,26.31 44.35,25.12 43.15,25.02 44.18,24.41 43.51,23.42 44.64,23.85"/>
-          <polygon points="48.60,15.20 48.86,15.94 49.65,15.96 49.02,16.44 49.25,17.19 48.60,16.74 47.95,17.19 48.18,16.44 47.55,15.96 48.34,15.94"/>
-        </g>
-      </svg>
-      <div id="tce-au-headline" class="tce-headline">
+      <div id="tce-au-flagbox" class="tce-flagbox">
         <p id="tce-au-country" class="tce-country">Australia</p>
+        <svg id="tce-au-flag" class="tce-flag" viewBox="0 0 60 30" role="img" aria-label="Flag of Australia">
+          <defs>
+            <clipPath id="tce-au-clip-s"><path d="M0,0v15h30v-15z"/></clipPath>
+            <clipPath id="tce-au-clip-t"><path d="M15,7.5h15v7.5zv7.5h-15zh-15v-7.5zv-7.5h15z"/></clipPath>
+          </defs>
+          <rect id="tce-au-flag-field" class="tce-flag-field" width="60" height="30" fill="#012169"/>
+          <g id="tce-au-flag-union" class="tce-flag-union" clip-path="url(#tce-au-clip-s)">
+            <path d="M0,0L30,15M30,0L0,15" stroke="#fff" stroke-width="3"/>
+            <path d="M0,0L30,15M30,0L0,15" clip-path="url(#tce-au-clip-t)" stroke="#C8102E" stroke-width="2"/>
+            <path d="M15,0v15M0,7.5h30" stroke="#fff" stroke-width="5"/>
+            <path d="M15,0v15M0,7.5h30" stroke="#C8102E" stroke-width="3"/>
+          </g>
+          <g id="tce-au-flag-stars" class="tce-flag-stars" fill="#fff">
+            <polygon points="15.00,18.30 15.80,20.84 18.28,19.88 16.80,22.09 19.09,23.43 16.44,23.65 16.82,26.28 15.00,24.35 13.18,26.28 13.56,23.65 10.91,23.43 13.20,22.09 11.72,19.88 14.20,20.84"/>
+            <polygon points="45.00,3.60 45.36,4.75 46.49,4.32 45.82,5.31 46.85,5.92 45.65,6.02 45.82,7.21 45.00,6.34 44.18,7.21 44.35,6.02 43.15,5.92 44.18,5.31 43.51,4.32 44.64,4.75"/>
+            <polygon points="37.50,11.30 37.86,12.45 38.99,12.02 38.32,13.01 39.35,13.62 38.15,13.72 38.32,14.91 37.50,14.04 36.68,14.91 36.85,13.72 35.65,13.62 36.68,13.01 36.01,12.02 37.14,12.45"/>
+            <polygon points="51.60,9.50 51.96,10.65 53.09,10.22 52.42,11.21 53.45,11.82 52.25,11.92 52.42,13.11 51.60,12.24 50.78,13.11 50.95,11.92 49.75,11.82 50.78,11.21 50.11,10.22 51.24,10.65"/>
+            <polygon points="45.00,22.70 45.36,23.85 46.49,23.42 45.82,24.41 46.85,25.02 45.65,25.12 45.82,26.31 45.00,25.44 44.18,26.31 44.35,25.12 43.15,25.02 44.18,24.41 43.51,23.42 44.64,23.85"/>
+            <polygon points="48.60,15.20 48.86,15.94 49.65,15.96 49.02,16.44 49.25,17.19 48.60,16.74 47.95,17.19 48.18,16.44 47.55,15.96 48.34,15.94"/>
+          </g>
+        </svg>
+      </div>
+      <div id="tce-au-headline" class="tce-headline">
         <p id="tce-au-stat" class="tce-stat">+12<span id="tce-au-stat-unit" class="tce-stat-unit">%</span></p>
         <p id="tce-au-statlbl" class="tce-statlbl">compulsory superannuation on eligible ordinary wages</p>
       </div>
@@ -187,21 +192,23 @@
   <!-- ===== 2. UNITED KINGDOM ===== -->
   <article id="tce-slide-uk" class="tce-slide tce-slide-uk" role="group" aria-roledescription="slide" aria-label="2 of 3: United Kingdom">
     <div id="tce-uk-top" class="tce-top">
-      <svg id="tce-uk-flag" class="tce-flag" viewBox="0 0 60 30" role="img" aria-label="Flag of the United Kingdom">
-        <defs>
-          <clipPath id="tce-uk-clip-s"><path d="M0,0v30h60v-30z"/></clipPath>
-          <clipPath id="tce-uk-clip-t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath>
-        </defs>
-        <g id="tce-uk-flag-union" class="tce-flag-union" clip-path="url(#tce-uk-clip-s)">
-          <path d="M0,0v30h60v-30z" fill="#012169"/>
-          <path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/>
-          <path d="M0,0L60,30M60,0L0,30" clip-path="url(#tce-uk-clip-t)" stroke="#C8102E" stroke-width="4"/>
-          <path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/>
-          <path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/>
-        </g>
-      </svg>
-      <div id="tce-uk-headline" class="tce-headline">
+      <div id="tce-uk-flagbox" class="tce-flagbox">
         <p id="tce-uk-country" class="tce-country">United Kingdom</p>
+        <svg id="tce-uk-flag" class="tce-flag" viewBox="0 0 60 30" role="img" aria-label="Flag of the United Kingdom">
+          <defs>
+            <clipPath id="tce-uk-clip-s"><path d="M0,0v30h60v-30z"/></clipPath>
+            <clipPath id="tce-uk-clip-t"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath>
+          </defs>
+          <g id="tce-uk-flag-union" class="tce-flag-union" clip-path="url(#tce-uk-clip-s)">
+            <path d="M0,0v30h60v-30z" fill="#012169"/>
+            <path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/>
+            <path d="M0,0L60,30M60,0L0,30" clip-path="url(#tce-uk-clip-t)" stroke="#C8102E" stroke-width="4"/>
+            <path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/>
+            <path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/>
+          </g>
+        </svg>
+      </div>
+      <div id="tce-uk-headline" class="tce-headline">
         <p id="tce-uk-stat" class="tce-stat">+15<span id="tce-uk-stat-unit" class="tce-stat-unit">%</span></p>
         <p id="tce-uk-statlbl" class="tce-statlbl">employer National Insurance on wages above the employer threshold</p>
       </div>
@@ -231,14 +238,16 @@
   <!-- ===== 3. UNITED STATES ===== -->
   <article id="tce-slide-us" class="tce-slide tce-slide-us" role="group" aria-roledescription="slide" aria-label="3 of 3: United States">
     <div id="tce-us-top" class="tce-top">
-      <svg id="tce-us-flag" class="tce-flag" viewBox="0 0 76 40" role="img" aria-label="Flag of the United States">
-        <rect id="tce-us-flag-field" class="tce-flag-field" width="76" height="40" fill="#fff"/>
-        <g id="tce-us-flag-stripes" class="tce-flag-stripes" fill="#B22234"><rect y="0.000" width="76" height="3.077"/><rect y="6.154" width="76" height="3.077"/><rect y="12.308" width="76" height="3.077"/><rect y="18.462" width="76" height="3.077"/><rect y="24.615" width="76" height="3.077"/><rect y="30.769" width="76" height="3.077"/><rect y="36.923" width="76" height="3.077"/></g>
-        <rect id="tce-us-flag-canton" class="tce-flag-canton" width="30.4" height="21.54" fill="#3C3B6E"/>
-        <g id="tce-us-flag-stars" class="tce-flag-stars" fill="#fff"><circle cx="2.53" cy="2.15" r=".75"/><circle cx="7.60" cy="2.15" r=".75"/><circle cx="12.67" cy="2.15" r=".75"/><circle cx="17.73" cy="2.15" r=".75"/><circle cx="22.80" cy="2.15" r=".75"/><circle cx="27.87" cy="2.15" r=".75"/><circle cx="5.07" cy="4.31" r=".75"/><circle cx="10.13" cy="4.31" r=".75"/><circle cx="15.20" cy="4.31" r=".75"/><circle cx="20.27" cy="4.31" r=".75"/><circle cx="25.33" cy="4.31" r=".75"/><circle cx="2.53" cy="6.46" r=".75"/><circle cx="7.60" cy="6.46" r=".75"/><circle cx="12.67" cy="6.46" r=".75"/><circle cx="17.73" cy="6.46" r=".75"/><circle cx="22.80" cy="6.46" r=".75"/><circle cx="27.87" cy="6.46" r=".75"/><circle cx="5.07" cy="8.62" r=".75"/><circle cx="10.13" cy="8.62" r=".75"/><circle cx="15.20" cy="8.62" r=".75"/><circle cx="20.27" cy="8.62" r=".75"/><circle cx="25.33" cy="8.62" r=".75"/><circle cx="2.53" cy="10.77" r=".75"/><circle cx="7.60" cy="10.77" r=".75"/><circle cx="12.67" cy="10.77" r=".75"/><circle cx="17.73" cy="10.77" r=".75"/><circle cx="22.80" cy="10.77" r=".75"/><circle cx="27.87" cy="10.77" r=".75"/><circle cx="5.07" cy="12.92" r=".75"/><circle cx="10.13" cy="12.92" r=".75"/><circle cx="15.20" cy="12.92" r=".75"/><circle cx="20.27" cy="12.92" r=".75"/><circle cx="25.33" cy="12.92" r=".75"/><circle cx="2.53" cy="15.08" r=".75"/><circle cx="7.60" cy="15.08" r=".75"/><circle cx="12.67" cy="15.08" r=".75"/><circle cx="17.73" cy="15.08" r=".75"/><circle cx="22.80" cy="15.08" r=".75"/><circle cx="27.87" cy="15.08" r=".75"/><circle cx="5.07" cy="17.23" r=".75"/><circle cx="10.13" cy="17.23" r=".75"/><circle cx="15.20" cy="17.23" r=".75"/><circle cx="20.27" cy="17.23" r=".75"/><circle cx="25.33" cy="17.23" r=".75"/><circle cx="2.53" cy="19.39" r=".75"/><circle cx="7.60" cy="19.39" r=".75"/><circle cx="12.67" cy="19.39" r=".75"/><circle cx="17.73" cy="19.39" r=".75"/><circle cx="22.80" cy="19.39" r=".75"/><circle cx="27.87" cy="19.39" r=".75"/></g>
-      </svg>
-      <div id="tce-us-headline" class="tce-headline">
+      <div id="tce-us-flagbox" class="tce-flagbox">
         <p id="tce-us-country" class="tce-country">United States</p>
+        <svg id="tce-us-flag" class="tce-flag" viewBox="0 0 76 40" role="img" aria-label="Flag of the United States">
+          <rect id="tce-us-flag-field" class="tce-flag-field" width="76" height="40" fill="#fff"/>
+          <g id="tce-us-flag-stripes" class="tce-flag-stripes" fill="#B22234"><rect y="0.000" width="76" height="3.077"/><rect y="6.154" width="76" height="3.077"/><rect y="12.308" width="76" height="3.077"/><rect y="18.462" width="76" height="3.077"/><rect y="24.615" width="76" height="3.077"/><rect y="30.769" width="76" height="3.077"/><rect y="36.923" width="76" height="3.077"/></g>
+          <rect id="tce-us-flag-canton" class="tce-flag-canton" width="30.4" height="21.54" fill="#3C3B6E"/>
+          <g id="tce-us-flag-stars" class="tce-flag-stars" fill="#fff"><circle cx="2.53" cy="2.15" r=".75"/><circle cx="7.60" cy="2.15" r=".75"/><circle cx="12.67" cy="2.15" r=".75"/><circle cx="17.73" cy="2.15" r=".75"/><circle cx="22.80" cy="2.15" r=".75"/><circle cx="27.87" cy="2.15" r=".75"/><circle cx="5.07" cy="4.31" r=".75"/><circle cx="10.13" cy="4.31" r=".75"/><circle cx="15.20" cy="4.31" r=".75"/><circle cx="20.27" cy="4.31" r=".75"/><circle cx="25.33" cy="4.31" r=".75"/><circle cx="2.53" cy="6.46" r=".75"/><circle cx="7.60" cy="6.46" r=".75"/><circle cx="12.67" cy="6.46" r=".75"/><circle cx="17.73" cy="6.46" r=".75"/><circle cx="22.80" cy="6.46" r=".75"/><circle cx="27.87" cy="6.46" r=".75"/><circle cx="5.07" cy="8.62" r=".75"/><circle cx="10.13" cy="8.62" r=".75"/><circle cx="15.20" cy="8.62" r=".75"/><circle cx="20.27" cy="8.62" r=".75"/><circle cx="25.33" cy="8.62" r=".75"/><circle cx="2.53" cy="10.77" r=".75"/><circle cx="7.60" cy="10.77" r=".75"/><circle cx="12.67" cy="10.77" r=".75"/><circle cx="17.73" cy="10.77" r=".75"/><circle cx="22.80" cy="10.77" r=".75"/><circle cx="27.87" cy="10.77" r=".75"/><circle cx="5.07" cy="12.92" r=".75"/><circle cx="10.13" cy="12.92" r=".75"/><circle cx="15.20" cy="12.92" r=".75"/><circle cx="20.27" cy="12.92" r=".75"/><circle cx="25.33" cy="12.92" r=".75"/><circle cx="2.53" cy="15.08" r=".75"/><circle cx="7.60" cy="15.08" r=".75"/><circle cx="12.67" cy="15.08" r=".75"/><circle cx="17.73" cy="15.08" r=".75"/><circle cx="22.80" cy="15.08" r=".75"/><circle cx="27.87" cy="15.08" r=".75"/><circle cx="5.07" cy="17.23" r=".75"/><circle cx="10.13" cy="17.23" r=".75"/><circle cx="15.20" cy="17.23" r=".75"/><circle cx="20.27" cy="17.23" r=".75"/><circle cx="25.33" cy="17.23" r=".75"/><circle cx="2.53" cy="19.39" r=".75"/><circle cx="7.60" cy="19.39" r=".75"/><circle cx="12.67" cy="19.39" r=".75"/><circle cx="17.73" cy="19.39" r=".75"/><circle cx="22.80" cy="19.39" r=".75"/><circle cx="27.87" cy="19.39" r=".75"/></g>
+        </svg>
+      </div>
+      <div id="tce-us-headline" class="tce-headline">
         <p id="tce-us-stat" class="tce-stat">+7.65<span id="tce-us-stat-unit" class="tce-stat-unit">%</span></p>
         <p id="tce-us-statlbl" class="tce-statlbl">Social Security and Medicare – and that’s just the start</p>
       </div>
